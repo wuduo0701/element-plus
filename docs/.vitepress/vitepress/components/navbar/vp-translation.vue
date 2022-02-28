@@ -26,11 +26,11 @@ const { switchLang, languageMap, langs, lang, helpTranslate } = useTranslation()
         >
           {{ languageMap[l] }}
         </div>
-        <div class="language">
+        <!-- <div class="language">
           <VPLink href="https://crowdin.com/project/element-plus">
             {{ helpTranslate }}
           </VPLink>
-        </div>
+        </div> -->
       </ElPopover>
     </ClientOnly>
   </div>

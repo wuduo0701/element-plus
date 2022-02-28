@@ -5,9 +5,9 @@ import VPLastUpdatedAt from './vp-last-updated-at.vue'
 
 <template>
   <footer class="page-footer">
-    <div class="edit">
+    <!-- <div class="edit">
       <VPEditLink />
-    </div>
+    </div> -->
     <div class="updated">
       <VPLastUpdatedAt />
     </div>
@@ -19,9 +19,11 @@ import VPLastUpdatedAt from './vp-last-updated-at.vue'
 .page-footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  justify-content: flex-end !important;
   overflow: auto;
 
   .updated {
+    float: right;
     padding-top: 4px;
   }
 }

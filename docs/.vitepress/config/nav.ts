@@ -16,7 +16,7 @@ function getNav() {
       }))
 
       item.push({
-        text: lang === 'zh-CN' ? '旧版文档' : 'Old Doc',
+        text: lang === 'zh-CN' ? 'Jac1.0' : 'Jac1.0',
         link: 'http://jac-ui.jd.com/#/zh-CN',
       })
 

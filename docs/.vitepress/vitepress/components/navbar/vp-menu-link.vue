@@ -53,18 +53,25 @@ const onNavClick = (item: Link) => {
   display: block;
   padding: 0 12px;
   line-height: calc(var(--nav-height) - 3px);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
-  color: var(--text-color);
+  // color: var(--text-color);
+  color: #546e7a;
+  opacity: 0.5;
   transition: color var(--el-transition-duration);
   border-bottom: 2px solid transparent;
 
   &.active {
-    border-bottom-color: var(--brand-color);
+    opacity: 1;
+    color: #3f51b5;
+    border-bottom-color: #3f51b5;
+    // border-bottom-color: var(--brand-color);
   }
 
   &:hover {
-    color: var(--brand-color);
+    opacity: 1;
+    color: #3f51b5;
+    // color: var(--brand-color);
   }
 
   .badge {

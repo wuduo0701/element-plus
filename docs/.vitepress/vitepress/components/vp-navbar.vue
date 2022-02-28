@@ -42,7 +42,7 @@ const currentLink = computed(() => {
         </a>
       </div>
       <div class="content">
-        <!-- <VPNavbarSearch class="search" :options="theme.agolia" multilang /> -->
+        <VPNavbarSearch class="search" :options="theme.agolia" multilang />
         <VPNavbarMenu class="menu" />
         <VPNavbarThemeToggler v-if="themeEnabled" class="theme-toggler" />
         <VPNavbarTranslation class="translation" />
@@ -62,10 +62,10 @@ const currentLink = computed(() => {
   display: flex;
   align-items: center;
   height: var(--header-height);
-  > a {
-    height: 28px;
-    width: 128px;
-  }
+  // > a {
+  //   height: 28px;
+  //   width: 128px;
+  // }
   .logo {
     position: relative;
     width: 100%;
