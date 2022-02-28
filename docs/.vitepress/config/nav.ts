@@ -17,7 +17,7 @@ function getNav() {
 
       item.push({
         text: lang === 'zh-CN' ? '旧版文档' : 'Old Doc',
-        link: 'https://doc-archive.element-plus.org/',
+        link: 'http://jac-ui.jd.com/#/zh-CN',
       })
 
       return [lang, item]

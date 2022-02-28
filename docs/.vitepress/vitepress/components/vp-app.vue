@@ -56,7 +56,7 @@ onMounted(async () => {
     },
     { capture: true }
   )
-
+  // 站点跳转
   if (lang.value === 'zh-CN') {
     if (location.host === 'element-plus.gitee.io') return
     const userPrefer = window.localStorage.getItem(USER_PREFER_GITHUB_PAGE)
@@ -103,9 +103,9 @@ onMounted(async () => {
     <VPNav />
     <VPSubNav v-if="hasSidebar" @open-menu="toggleSidebar(true)" />
     <VPSidebar :open="isSidebarOpen" @close="toggleSidebar(false)">
-      <template #top>
+      <!-- <template #top>
         <VPSponsors />
-      </template>
+      </template> -->
       <template #bottom>
         <slot name="sidebar-bottom" />
       </template>

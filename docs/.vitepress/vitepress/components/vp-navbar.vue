@@ -36,17 +36,17 @@ const currentLink = computed(() => {
         <a :href="currentLink">
           <img
             class="logo"
-            src="/images/element-plus-logo.svg"
+            src="/images/jac-logo.svg"
             alt="Element Plus Logo"
           />
         </a>
       </div>
       <div class="content">
-        <VPNavbarSearch class="search" :options="theme.agolia" multilang />
+        <!-- <VPNavbarSearch class="search" :options="theme.agolia" multilang /> -->
         <VPNavbarMenu class="menu" />
         <VPNavbarThemeToggler v-if="themeEnabled" class="theme-toggler" />
         <VPNavbarTranslation class="translation" />
-        <VPNavbarSocialLinks class="social-links" />
+        <!-- <VPNavbarSocialLinks class="social-links" /> -->
         <VPNavbarHamburger
           :active="fullScreen"
           class="hamburger"

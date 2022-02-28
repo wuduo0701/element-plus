@@ -57,7 +57,7 @@ export function getSidebarConfig(sidebar: Sidebar, path: string, lang: string) {
   if (sidebar === false || Array.isArray(sidebar) || sidebar === 'auto') {
     return []
   }
-
+  console.log(path)
   path = ensureStartingSlash(path)
   for (const dir in sidebar) {
     // make sure the multi sidebar key starts with slash too

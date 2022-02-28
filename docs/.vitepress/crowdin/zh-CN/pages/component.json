@@ -41,6 +41,10 @@
       {
         "link": "/typography",
         "text": "Typography 排版"
+      },
+      {
+        "link": "/test",
+        "text": "测试组件"
       }
     ]
   },

@@ -9,6 +9,7 @@ export const withInstall = <T, E extends Record<string, any>>(
 ) => {
   ;(main as SFCWithInstall<T>).install = (app): void => {
     for (const comp of [main, ...Object.values(extra ?? {})]) {
+      // 挂载在了app上 改别名就行
       app.component(comp.name, comp)
     }
   }
