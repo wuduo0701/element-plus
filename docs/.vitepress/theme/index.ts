@@ -1,4 +1,6 @@
+// import ElementPlus from 'element-plus'
 import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 
 // windicss layers
 import 'virtual:windi-base.css'
@@ -13,12 +15,11 @@ import 'virtual:windi-utilities.css'
 import 'virtual:windi-devtools'
 
 import type { Theme } from 'vitepress'
-
 export default define<Theme>({
   NotFound,
   Layout: VPApp,
   enhanceApp: ({ app }) => {
-    app.use(ElementPlus)
+    app.use(ElementPlus, { size: 'small', zIndex: 3000 })
 
     globals.forEach(([name, Comp]) => {
       app.component(name, Comp)

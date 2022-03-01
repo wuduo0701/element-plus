@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, toRef, getCurrentInstance } from 'vue'
 import { useClipboard, useToggle } from '@vueuse/core'
+import { ElMessage } from 'element-plus'
 import { CaretTop } from '@element-plus/icons-vue'
 import { useLang } from '../composables/lang'
 import { useSourceCode } from '../composables/source-code'
@@ -56,15 +57,29 @@ const onPlaygroundClicked = () => {
 }
 
 const copyCode = async () => {
+  // console.log(333)
   const { $message } = vm.appContext.config.globalProperties
+
   if (!isSupported) {
-    $message.error(locale.value['copy-error'])
+    // $message.error(locale.value['copy-error'])
+    ElMessage({
+      message: locale.value['copy-error'],
+      type: 'error',
+    })
   }
   try {
     await copy()
-    $message.success(locale.value['copy-success'])
+    ElMessage({
+      message: locale.value['copy-success'],
+      type: 'success',
+    })
+    // $message.success(locale.value['copy-success'])
   } catch (e: any) {
-    $message.error(e.message)
+    ElMessage({
+      message: e.message,
+      type: 'error',
+    })
+    // $message.error(e.message)
   }
 }
 </script>
@@ -104,7 +119,7 @@ const copyCode = async () => {
           </ElIcon>
         </ElTooltip>
       </div>
-      <ElDivider class="m-0" />
+      <!-- <ElDivider class="m-0" /> -->
       <Example :file="path" :demo="formatPathDemos[path]" />
       <el-collapse-transition>
         <SourceCode v-show="sourceVisible" :source="source" />

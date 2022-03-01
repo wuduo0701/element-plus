@@ -38,7 +38,7 @@ import {
   ElDescriptionsItem,
 } from '@element-plus/components/descriptions'
 import { ElDialog } from '@element-plus/components/dialog'
-import { ElDivider } from '@element-plus/components/divider'
+// import { ElDivider } from '@element-plus/components/divider'
 import { ElDrawer } from '@element-plus/components/drawer'
 import {
   ElDropdown,
@@ -95,6 +95,7 @@ import { ElTransfer } from '@element-plus/components/transfer'
 import { ElTree } from '@element-plus/components/tree'
 import { ElTreeV2 } from '@element-plus/components/tree-v2'
 import { ElUpload } from '@element-plus/components/upload'
+import { ElFloatingMenu } from '@element-plus/components/floating-menu'
 import type { Plugin } from 'vue'
 
 export default [
@@ -133,7 +134,7 @@ export default [
   ElDescriptions,
   ElDescriptionsItem,
   ElDialog,
-  ElDivider,
+  // ElDivider,
   ElDrawer,
   ElDropdown,
   ElDropdownItem,
@@ -188,4 +189,5 @@ export default [
   ElTree,
   ElTreeV2,
   ElUpload,
+  ElFloatingMenu,
 ] as Plugin[]
