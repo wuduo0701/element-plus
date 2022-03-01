@@ -1,4 +1,9 @@
+// 引入element-plus
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+// 注册组件
 import installer from './defaults'
+
 export * from '@element-plus/components'
 export * from '@element-plus/directives'
 export * from '@element-plus/hooks'

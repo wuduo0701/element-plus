@@ -75,12 +75,12 @@ const copyCode = async () => {
     <p text="sm" v-html="decodedDescription" />
     <div class="example">
       <div class="op-btns">
-        <ElTooltip :content="locale['edit-in-editor']" :show-arrow="false">
+        <!-- <ElTooltip :content="locale['edit-in-editor']" :show-arrow="false">
           <ElIcon :size="20" class="op-btn">
             <i-ri-play-circle-line @click="onPlaygroundClicked" />
           </ElIcon>
-        </ElTooltip>
-        <ElTooltip :content="locale['edit-on-github']" :show-arrow="false">
+        </ElTooltip> -->
+        <!-- <ElTooltip :content="locale['edit-on-github']" :show-arrow="false">
           <ElIcon
             :size="20"
             class="op-btn github"
@@ -90,7 +90,7 @@ const copyCode = async () => {
               <i-ri-github-line />
             </a>
           </ElIcon>
-        </ElTooltip>
+        </ElTooltip> -->
         <ElTooltip :content="locale['copy-code']" :show-arrow="false">
           <ElIcon :size="20" class="op-btn" @click="copyCode">
             <!-- <CopyIcon /> -->
