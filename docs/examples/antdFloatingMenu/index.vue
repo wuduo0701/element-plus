@@ -8,6 +8,7 @@
     :visibility-height="floatingMenuConfig.visibilityHeight"
   >
   </el-antdFloatingMenu>
+  <!-- <el-floatingMenu></el-floatingMenu> -->
 </template>
 <script lang="ts" setup>
 const getTarget = () => document.body

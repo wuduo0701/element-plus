@@ -4,7 +4,7 @@ import { useParallax, useThrottleFn, useEventListener } from '@vueuse/core'
 // import dayjs from 'dayjs'
 import { useLang } from '../../composables/lang'
 import homeLocale from '../../../i18n/pages/home.json'
-import sponsorLocale from '../../../i18n/component/sponsors-home.json'
+// import sponsorLocale from '../../../i18n/component/sponsors-home.json'
 import type { CSSProperties } from 'vue'
 
 const target = ref<HTMLElement | null>(null)
@@ -13,7 +13,9 @@ const jumbotronRedOffset = ref(0)
 const jumbotronRef = ref<HTMLElement | null>(null)
 const lang = useLang()
 const homeLang = computed(() => homeLocale[lang.value])
-const sponsors = computed(() => sponsorLocale[lang.value])
+// const sponsors = computed(() => sponsorLocale[lang.value])
+
+console.log(homeLang)
 
 const containerStyle: CSSProperties = {
   display: 'flex',
@@ -68,91 +70,10 @@ const handleScroll = useThrottleFn(() => {
 }, 10)
 
 useEventListener(window, 'scroll', handleScroll)
-
-// interface CountdownT {
-//   days: string
-//   hours: string
-//   minutes: string
-//   seconds: string
-// }
-// const releaseDate = dayjs('2022-02-07T11:00:00.000+08:00')
-// const isBeforeRelease = ref(false)
-// const countdownText = ref<CountdownT>({} as CountdownT)
-// const calReleaseCountDown = () => {
-//   if (dayjs().isBefore(releaseDate)) {
-//     isBeforeRelease.value = true
-//     const dayDiff = releaseDate.diff(dayjs(), 'day')
-//     countdownText.value.days = String(dayDiff).padStart(2, '0')
-//     const hourDiff = releaseDate.diff(dayjs(), 'hour') - dayDiff * 24
-//     countdownText.value.hours = String(hourDiff).padStart(2, '0')
-//     const minuteDiff =
-//       releaseDate.diff(dayjs(), 'minute') - hourDiff * 60 - dayDiff * 24 * 60
-//     countdownText.value.minutes = String(minuteDiff).padStart(2, '0')
-//     const secondDiff =
-//       releaseDate.diff(dayjs(), 'second') -
-//       minuteDiff * 60 -
-//       hourDiff * 60 * 60 -
-//       dayDiff * 24 * 60 * 60
-//     countdownText.value.seconds = String(secondDiff).padStart(2, '0')
-//   } else {
-//     pauseCountdown()
-//   }
-// }
-
-// const { pause: pauseCountdown } = useIntervalFn(
-//   () => calReleaseCountDown(),
-//   1000,
-//   { immediateCallback: true }
-// )
 </script>
 
 <template>
-  <div ref="target" class="home-page">
-    <!-- <template v-if="isBeforeRelease">
-      <div class="banner">
-        <div class="banner-desc banner-dot">
-          <h1>
-            <span>{{ homeLang['title_release'] }}</span>
-          </h1>
-          <p>{{ homeLang['title_sub'] }}</p>
-        </div>
-      </div>
-      <div class="count-down">
-        <div class="cd-main">
-          <div class="cd-date">Feb 7, 2022, 11 AM GMT+8</div>
-          <div class="cd-time">
-            <div class="cd-item">
-              <div class="cd-num">
-                <span>{{ countdownText.days[0] }}</span>
-                <span>{{ countdownText.days[1] }}</span>
-              </div>
-              <div class="cd-str">DAYS</div>
-            </div>
-            <div class="cd-item">
-              <div class="cd-num">
-                <span>{{ countdownText.hours[0] }}</span>
-                <span>{{ countdownText.hours[1] }}</span>
-              </div>
-              <div class="cd-str">HOURS</div>
-            </div>
-            <div class="cd-item">
-              <div class="cd-num">
-                <span>{{ countdownText.minutes[0] }}</span>
-                <span>{{ countdownText.minutes[1] }}</span>
-              </div>
-              <div class="cd-str">MINUTES</div>
-            </div>
-            <div class="cd-item">
-              <div class="cd-num">
-                <span>{{ countdownText.seconds[0] }}</span>
-                <span>{{ countdownText.seconds[1] }}</span>
-              </div>
-              <div class="cd-str">SECONDS</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </template> -->
+  <!-- <div ref="target" class="home-page">
     <div class="banner">
       <div class="banner-desc">
         <h1>{{ homeLang['title'] }}</h1>
@@ -169,39 +90,6 @@ useEventListener(window, 'scroll', handleScroll)
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="sponsors-container">
-      <div class="sponsors-list">
-        <a
-          v-for="(sponsor, i) in sponsors"
-          :key="i"
-          :class="['sponsor', sponsor.className]"
-          :href="sponsor.url"
-          target="_blank"
-        >
-          <img width="45" :src="sponsor.img" :alt="sponsor.name" />
-          <div>
-            <p>
-              Sponsored by
-              <span class="name">{{ sponsor.name }}</span>
-            </p>
-            <p>{{ sponsor.slogan }}</p>
-          </div>
-        </a>
-      </div>
-      <div class="join">
-        <el-tooltip placement="top" :hide-after="1000" :offset="20">
-          <template #content>
-            {{ homeLang['21'] }}
-            <a href="mailto:element-plus@outlook.com" target="_blank">
-              &nbsp;element-plus@outlook.com
-            </a>
-          </template>
-          <a href="mailto:element-plus@outlook.com" target="_blank">
-            <el-button round>{{ homeLang['20'] }}</el-button>
-          </a>
-        </el-tooltip>
       </div>
     </div>
     <div class="cards">
@@ -230,6 +118,83 @@ useEventListener(window, 'scroll', handleScroll)
             <h3>{{ homeLang['8'] }}</h3>
             <p>{{ homeLang['9'] }}</p>
             <a :href="`/${lang}/resource/index.html`"> {{ homeLang['5'] }} </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div> -->
+  <div ref="target" class="index-container">
+    <div class="banner-wrapper">
+      <div class="banner">
+        <div class="banner-desc">
+          <h1>
+            Welcome
+            <span>jac-plus.</span>
+          </h1>
+          <h1>Develop anything your business needs.</h1>
+          <p>
+            Build a beautiful, modern website with flexible, fully customizable,
+            atomic Material UI components.
+          </p>
+        </div>
+        <div class="btns-box">
+          <!-- <router-link
+            active-class="active"
+            to="/zh-CN/component/quickstart"
+            exact>
+            <el-button type="primary" size="middle">快速使用</el-button>
+          </router-link> -->
+          <a href="/zh-CN/component/button.html">
+            <el-button type="primary" size="default">快速使用</el-button>
+          </a>
+          <!-- <router-link
+            active-class="active"
+            to="/zh-CN/guide/design"
+            exact>
+            <span class="watch-play"></span>
+            <el-button class="watch-btn">观看视频</el-button>
+          </router-link> -->
+        </div>
+      </div>
+      <div class="barnner-img">
+        <img
+          style="width: 400px"
+          src="/images/relax-working.svg"
+          alt="relax-working"
+        />
+      </div>
+    </div>
+    <!-- features -->
+    <div class="features-wrapper">
+      <ul>
+        <li>
+          <div class="img-box">
+            <img width="70px" src="/images/built.png" alt="relax-working" />
+          </div>
+          <div class="title">Built for developers</div>
+          <div class="desc">
+            JacUI is built to make your life easier. Variables, build tooling,
+            documentation, and reusable components.
+          </div>
+        </li>
+        <li>
+          <div class="img-box">
+            <img width="70px" src="/images/modern.png" alt="relax-working" />
+          </div>
+          <div class="title">Designed to be modern</div>
+          <div class="desc">
+            Designed with the latest design trends in mind. JacUI feels modern,
+            minimal, and beautiful.
+          </div>
+        </li>
+        <li>
+          <div class="img-box">
+            <img width="70px" src="/images/web-basic.png" alt="relax-working" />
+          </div>
+          <div class="title">Documentation for everything</div>
+          <div class="desc">
+            We've written extensive documentation for components and tools, so
+            you never have to reverse engineer anything.
           </div>
         </li>
       </ul>
@@ -374,52 +339,6 @@ useEventListener(window, 'scroll', handleScroll)
     }
   }
 
-  .sponsors-container {
-    .join {
-      text-align: center;
-      margin: 0 0 50px 0;
-    }
-  }
-
-  .sponsors-list {
-    display: flex;
-    justify-content: center;
-    // jnpf ad class
-    .jnpf > div > p:last-of-type {
-      font-size: 12px;
-    }
-  }
-
-  .sponsor {
-    margin: 0 20px 10px;
-    display: inline-flex;
-    width: 300px;
-    height: 100px;
-    justify-content: center;
-    align-items: center;
-
-    .name {
-      font-weight: bold;
-      color: var(--text-color);
-    }
-
-    img {
-      margin-right: 20px;
-    }
-
-    div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    p {
-      margin: 0;
-      line-height: 1.8;
-      color: var(--text-color-light);
-      font-size: 14px;
-    }
-  }
   .jumbotron {
     width: 890px;
     margin: 30px auto;
@@ -598,14 +517,6 @@ useEventListener(window, 'scroll', handleScroll)
         margin-top: 0px;
       }
     }
-    .sponsors-list {
-      display: flex;
-      flex-direction: column;
-      align-content: center;
-      .sponsor {
-        justify-content: left;
-      }
-    }
   }
   .theme-intro-b {
     position: fixed;
@@ -682,8 +593,147 @@ useEventListener(window, 'scroll', handleScroll)
     }
   }
 }
+.banner-wrapper {
+  margin: 40px auto 96px;
+  width: 1140px;
+  padding: 40px 64px;
+  border-radius: 16px;
+  box-sizing: border-box;
+  font-family: Lato-Bold2;
+  display: flex;
+  justify-content: space-between;
+  .banner {
+    display: inline-block;
+    width: 480px;
+  }
+  .barnner-img {
+    display: inline-block;
+  }
+  .banner-desc {
+    padding-top: 20px;
+
+    h1 {
+      font-size: 48px;
+      margin: 0;
+      line-height: 60px;
+      color: #121037;
+      font-family: Lato-Bold2;
+      font-weight: bold;
+      span {
+        color: #ff5847;
+      }
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 28px;
+      color: #546e7a;
+      margin: 20px 0;
+    }
+  }
+  .btns-box {
+    a {
+      display: inline-block;
+      margin-right: 15px;
+    }
+    /* .el-button{
+      color: #3f51b5;
+      border: 1px solid rgba(63, 81, 181, 0.5);
+      &:focus,
+      &:hover{
+        border: 1px solid #3f51b5;
+        background-color: rgba(63, 81, 181, 0.04);
+      }
+    } */
+    .watch-play {
+      display: inline-block;
+      border: 10px solid #3f51b5;
+      width: 0;
+      height: 0;
+      border-width: 0 10px 15px;
+      border-color: transparent transparent #3f51b5;
+      border-style: solid;
+      transform: rotate(90deg);
+      vertical-align: -2px;
+      margin-right: -10px;
+      margin-left: -5px;
+    }
+    .watch-btn {
+      color: #121037;
+      border: none;
+      background-color: transparent;
+      &:focus,
+      &:hover {
+        border: none;
+        background-color: transparent;
+      }
+    }
+    .el-button--primary,
+    .el-button--primary {
+      color: #fff;
+      background-color: #3f51b5;
+      border-color: #3f51b5;
+      &:focus,
+      &:hover {
+        background: #303f9f;
+        border-color: #303f9f;
+      }
+    }
+  }
+}
+.features-wrapper {
+  margin: 0px auto 96px;
+  width: 1140px;
+  padding: 40px 64px;
+  font-family: Lato-Bold2;
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-left: 0;
+  }
+  li {
+    width: 400px;
+  }
+  .img-box {
+    padding: 8px 15px;
+    img {
+      width: 70px;
+    }
+  }
+  .title {
+    font-size: 18px;
+    padding: 8px 15px;
+    color: #121037;
+    font-weight: 700;
+    font-family: Lato-Black2;
+  }
+  .desc {
+    padding: 8px 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #546e7a;
+    font-family: Lato-Bold1;
+  }
+}
+@media (max-width: 1140px) {
+}
+
+@media (max-width: 1000px) {
+}
+
+@media (max-width: 768px) {
+  .banner-desc {
+    h1 {
+      font-size: 32px;
+      line-height: 48px;
+    }
+  }
+}
 .footer {
-  background-color: var(--bg-color);
+  // background-color: var(--bg-color);
+  background-color: #1b1642;
   width: 100%;
   padding: 40px 150px;
   box-sizing: border-box;
