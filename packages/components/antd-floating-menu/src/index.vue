@@ -184,7 +184,7 @@ interface State {
 }
 
 defineOptions({
-  name: 'AntdFloatingMenu',
+  name: 'ElAntdFloatingMenu',
 })
 
 const props = defineProps(antdFloatingMenuProps)

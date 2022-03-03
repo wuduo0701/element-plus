@@ -41,6 +41,10 @@
       {
         "link": "/test",
         "text": "测试组件"
+      },
+      {
+        "link": "/antdFloatingMenu",
+        "text": "FloatingMenu悬浮菜单"
       }
     ]
   },
