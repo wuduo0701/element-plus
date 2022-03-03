@@ -1,6 +1,11 @@
-// 引入element-plus
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
+// // 引入element-plus
+// import ElementPlus from 'element-plus'
+// import 'element-plus/dist/index.css'
+
+// // 引入antdv
+// import Antd from 'ant-design-vue'
+// import 'ant-design-vue/dist/antd.css'
+
 // 注册组件
 import installer from './defaults'
 

@@ -67,6 +67,7 @@
     "@element-plus/utils": "workspace:*",
     "@popperjs/core": "^2.11.2",
     "@vueuse/core": "^7.6.2",
+    "ant-design-vue": "^2.2.8",
     "async-validator": "^4.0.7",
     "dayjs": "^1.10.7",
     "element-plus": "^2.0.3",

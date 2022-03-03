@@ -96,6 +96,7 @@ import { ElTree } from '@element-plus/components/tree'
 import { ElTreeV2 } from '@element-plus/components/tree-v2'
 import { ElUpload } from '@element-plus/components/upload'
 import { ElFloatingMenu } from '@element-plus/components/floating-menu'
+import { ElAntdFloatingMenu } from '@element-plus/components/antd-floating-menu'
 import type { Plugin } from 'vue'
 
 export default [
@@ -190,4 +191,5 @@ export default [
   ElTreeV2,
   ElUpload,
   ElFloatingMenu,
+  ElAntdFloatingMenu,
 ] as Plugin[]
