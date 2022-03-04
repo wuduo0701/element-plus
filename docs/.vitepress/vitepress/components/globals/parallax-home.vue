@@ -733,7 +733,7 @@ useEventListener(window, 'scroll', handleScroll)
 }
 .footer {
   // background-color: var(--bg-color);
-  background-color: #1b1642;
+  background-color: var(--site-bg-color);
   width: 100%;
   padding: 40px 150px;
   box-sizing: border-box;
@@ -754,6 +754,7 @@ useEventListener(window, 'scroll', handleScroll)
       font-size: 18px;
       line-height: 1;
       margin: 0 0 15px 0;
+      color: #fff;
     }
 
     .footer-main-link {
